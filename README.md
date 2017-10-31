@@ -1,6 +1,6 @@
-#My Portfolio
+# My Portfolio
 
-Here is my portfolio site's code. I've build this site with the intent to showcase my skill set for anyone itrested in my work.
+Here is my portfolio site's code. I've build this site with the intent to showcase my skill set for anyone interested in my works.
 
 ## 1.Technologies Used
 - HTML5
