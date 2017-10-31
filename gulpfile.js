@@ -3,7 +3,7 @@ const babel = require('gulp-babel');
 const changed = require('gulp-changed');
 const concat = require('gulp-concat');
 const deporder = require('gulp-deporder');
-// const htmlclean = require('gulp-htmlclean');
+const htmlclean = require('gulp-htmlclean');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 
@@ -14,22 +14,22 @@ const dir = {
 
 /* html */
 gulp.task('html:main', () => {
-    return gulp.src('./*.html')
+    return gulp.src(dir.src + '/*.html')
         .pipe(changed('./'))
-        // .pipe(uglify())
+        .pipe(htmlclean())
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('html:static', () => {
-    return gulp.src(dir.src + 'modules/**/*.html')
-        .pipe(changed(dir.dest + 'modules/'))
-        // .pipe(uglify())
-        .pipe(gulp.dest(dir.dest + 'modules/'));
+gulp.task('html:views', () => {
+    return gulp.src(dir.src + 'views/**/*.html')
+        .pipe(changed(dir.dest + 'views/'))
+        .pipe(htmlclean())
+        .pipe(gulp.dest(dir.dest + 'views/'));
 });
 
 /* css */
-gulp.task('sass', () => {
-    return gulp.src([dir.src + 'styles/sass/**/*scss', dir.src + 'styles/sass/**/*.sass'])
+gulp.task('scss', () => {
+    return gulp.src(dir.src + 'styles/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(dir.dest + 'css'));
@@ -37,9 +37,9 @@ gulp.task('sass', () => {
 
 /* js */
 gulp.task('js', () => {
-    return gulp.src(dir.src + 'scripts/**/*')
+    return gulp.src(dir.src + 'scripts/**/*.js')
         .pipe(babel({
-            presets: ['@babel/env'],
+            presets: ['env'],
         }))
         .pipe(deporder()) // reads dependencies on js files
         .pipe(concat('scripts.js'))
@@ -64,10 +64,11 @@ gulp.task('assets', ['assets:fonts', 'assets:images']);
 
 /* watch */
 gulp.task('dev:watch', () => {
-    gulp.watch('./*.html', ['html:main']);
-    gulp.watch(dir.src + 'modules/**/*', ['html:static']);
-    gulp.watch(dir.src + 'styles/**/*', ['sass']);
+    gulp.watch(dir.src + '/*.html', ['html:main']);
+    gulp.watch(dir.src + 'views/**/*.html', ['html:views']);
+    gulp.watch(dir.src + 'styles/**/*', ['scss']);
     gulp.watch(dir.src + 'scripts/**/*', ['js']);
 });
 
+/* Dev mode */
 gulp.task('dev', ['dev:watch', 'assets']);
