@@ -28,8 +28,8 @@ gulp.task('html:views', () => {
 });
 
 /* css */
-gulp.task('scss', () => {
-    return gulp.src(dir.src + 'styles/**/*.scss')
+gulp.task('sass', () => {
+    return gulp.src(dir.src + 'styles/**/*.sass')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(dir.dest + 'css'));
@@ -44,7 +44,7 @@ gulp.task('js', () => {
         .pipe(deporder()) // reads dependencies on js files
         .pipe(concat('scripts.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(dir.dest + 'scripts/'));
+        .pipe(gulp.dest(dir.dest + 'js/'));
 });
 
 /* assets */
@@ -66,9 +66,10 @@ gulp.task('assets', ['assets:fonts', 'assets:images']);
 gulp.task('dev:watch', () => {
     gulp.watch(dir.src + '/*.html', ['html:main']);
     gulp.watch(dir.src + 'views/**/*.html', ['html:views']);
-    gulp.watch(dir.src + 'styles/**/*', ['scss']);
+    gulp.watch(dir.src + 'styles/**/*', ['sass']);
     gulp.watch(dir.src + 'scripts/**/*', ['js']);
 });
 
 /* Dev mode */
-gulp.task('dev', ['dev:watch', 'assets']);
+// assets is not used after rearrange
+gulp.task('dev', ['dev:watch']);

@@ -1,0 +1,1 @@
+"use strict";function test(){console.log("main"),console.log("----")}function test(){console.log("second"),console.log("------")}
