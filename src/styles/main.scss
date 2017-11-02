@@ -1,0 +1,122 @@
+$first-color: #282c37;
+$second-color: #9baec8;
+$third-color: #d9e1e8;
+$forth-color: #2b90d9;
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../../assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../../assets/fonts/Lato-Light.ttf') format('truetype');
+}
+
+body {
+    width: 100%;
+    height: 2000px;
+    font-family: 'RobotoMono';
+    font-size: 18px;
+    background-color: $first-color;
+    color: $second-color;
+}
+
+
+/* Navigation */
+
+nav.container-nav {
+    width: 100%;
+    padding: 1rem 5rem; // height: 50px;
+    position: fixed; // background: pink;
+    display: flex; // align-items: baseline;
+    justify-content: space-between; // padding: 15px;
+    box-sizing: border-box;
+    div.container-links {
+        margin-top: 5px;
+        display: inline-block;
+        a {
+            margin-right: 15px;
+            i {
+                font-size: 30px;
+                color: $second-color;
+            }
+        }
+    }
+    a.button-contact {
+        display: inline-block;
+        right: 25px;
+        padding: 0.8rem;
+        border-radius: 7px;
+        background-color: $forth-color;
+        color: $second-color;
+        text-decoration: none;
+        z-index: 1;
+        // box-shadow: 1px 1px 1px #4d90c0;
+        font-family: 'RobotoMono';
+        font-weight: bold;
+    }
+}
+
+
+/* Header */
+
+header.container-header {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: url('../../assets/images/cosmic_background_2.jpg') top center / 100% 600px fixed;
+    /* background: image, position / size, attachment */
+    overflow: hidden;
+    z-index: -1;
+    div.starfield-back {
+        width: 100%;
+        height: 800px;
+        background: url('../../assets/images/ParallaxStars.png') center 0px repeat-y;
+        /* background: image, position, repeat */
+        position: absolute; // top: 200px;
+        // margin-top: -100px;
+    }
+    div.header-logo {
+        width: 150px;
+        height: 150px;
+        background: url('../../assets/images/personal_logo_low.png') top left no-repeat;
+        /* background: image, position, repeat */
+        position: absolute;
+        top: 70%;
+        margin-top: -50px;
+    }
+    div.planet-foreground {
+        width: 1060px;
+        height: 960px;
+        position: absolute;
+        background: url('../../assets/images/planet_on_foreground.png') center no-repeat;
+        /* background: image, position, repeat */
+        // top: 40%;
+        left: 35%;
+    }
+    div.container-title {
+        text-align: center;
+        position: absolute; // top: calc((50% + 50px)/2);
+        top: 41.5%;
+        left: 36.7%;
+        margin: 0 auto; // transform: translate(-50%, -50%); // needed for centering
+        font-family: 'RobotoMono';
+        font-weight: bold;
+        p {
+            font-size: 20px;
+            // text-shadow: 1px 1px 5px #6584af;
+        }
+        h1 {
+            font-size: 60px;
+            // text-shadow: 1px 1px 5px #6584af;
+        }
+    }
+}
+
+
+/* Additional classes */
+
+.nav-active {
+    background-color: $first-color;
+    box-shadow: 0px 1px 50px 1px #000000;
+}

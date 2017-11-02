@@ -28,8 +28,8 @@ gulp.task('html:views', () => {
 });
 
 /* css */
-gulp.task('sass', () => {
-    return gulp.src(dir.src + 'styles/**/*.sass')
+gulp.task('scss', () => {
+    return gulp.src(dir.src + 'styles/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(dir.dest + 'css'));
@@ -66,7 +66,7 @@ gulp.task('assets', ['assets:fonts', 'assets:images']);
 gulp.task('dev:watch', () => {
     gulp.watch(dir.src + '/*.html', ['html:main']);
     gulp.watch(dir.src + 'views/**/*.html', ['html:views']);
-    gulp.watch(dir.src + 'styles/**/*', ['sass']);
+    gulp.watch(dir.src + 'styles/**/*', ['scss']);
     gulp.watch(dir.src + 'scripts/**/*', ['js']);
 });
 
