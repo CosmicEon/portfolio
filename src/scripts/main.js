@@ -5,6 +5,7 @@ const $headerHeight = $('.container-header').height();
 $(window).scroll(function () {
     const $windowScroll = $(this).scrollTop();
 
+    // Navigation
     if ($windowScroll >= 100) {
         $('.container-nav').addClass('nav-active');
 
@@ -12,19 +13,21 @@ $(window).scroll(function () {
         $('.container-nav').removeClass('nav-active');
     }
 
-    console.log($windowScroll);
+    // console.log($headerHeight);
+    // console.log($windowScroll);
+
+    // Header
     if ($windowScroll <= $headerHeight) {
-        // console.log($headerHeight);
         $('.starfield-back').css({
-            'transform': `translate(0px, -${$windowScroll / 100}%)`,
+            'transform': `translate(0px, -${$windowScroll / 200}1)`,
         });
 
         $('.container-title').css({
-            'transform': `translate(0px, -${$windowScroll / 10}%)`,
+            'transform': `translate(0px, -${$windowScroll / 8}%)`,
         });
 
         $('.planet-foreground').css({
-            'transform': `translate(0px, -${$windowScroll / 30}%)`,
+            'transform': `translate(0px, -${$windowScroll / 20}%)`,
         });
     }
 });
