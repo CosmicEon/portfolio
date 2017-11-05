@@ -19,7 +19,7 @@ $(window).scroll(function () {
     // Header
     if ($windowScroll <= $headerHeight) {
         $('.starfield-back').css({
-            'transform': `translate(0px, -${$windowScroll / 200}1)`,
+            'transform': `translate(0px, -${$windowScroll / 40}px)`,
         });
 
         $('.container-title').css({

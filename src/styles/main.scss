@@ -2,6 +2,7 @@ $first-color: #282c37;
 $second-color: #9baec8;
 $third-color: #d9e1e8;
 $forth-color: #2b90d9;
+$fifth-color: #F57F17;
 $left-column-size: 200px;
 @font-face {
     font-family: 'RobotoMono';
@@ -59,8 +60,9 @@ nav.container-nav {
         padding: 0.8rem;
         border-radius: 5px;
         background-color: $forth-color;
-        color: $second-color;
+        color: $third-color;
         text-decoration: none;
+        text-align: center;
         z-index: 1; // box-shadow: 1px 1px 1px #4d90c0;
         font-family: 'RobotoMono';
         font-weight: bold;
@@ -152,6 +154,8 @@ main.container-main {
             img {
                 // width: auto;
                 width: 140px;
+                border: 3px solid $third-color;
+                border-radius: 7px;
             }
         }
         div.about-rightside {
@@ -174,7 +178,8 @@ main.container-main {
         display: flex;
         align-content: flex-start;
         div.skills-leftside {
-            width: $left-column-size; // display: inline-block;
+            // width: $left-column-size; // display: inline-block;
+            flex: 0 0 $left-column-size;
             padding: 20px;
             text-align: right;
             font-family: 'PlayfairDisplay';
@@ -188,6 +193,9 @@ main.container-main {
             font-family: 'RobotoMono';
             font-weight: bold;
             font-size: 1.2rem;
+            p {
+                margin-bottom: 25px;
+            }
         }
     }
     section.container-courses {
@@ -198,7 +206,8 @@ main.container-main {
         background: url('../../assets/images/sunset_over_earth.jpg') bottom center / 100% 900px no-repeat fixed;
         /* background: image, position / size, repeat, attachment */
         div.courses-leftside {
-            width: $left-column-size; // display: inline-block;
+            // width: $left-column-size; // display: inline-block;
+            flex: 0 0 $left-column-size;
             padding: 20px;
             text-align: right;
             font-family: 'PlayfairDisplay';
@@ -217,51 +226,56 @@ main.container-main {
             font-size: 1.2rem;
             div.courses-group {
                 // display: inline-block;
-                margin: 10px 0;
+                margin: 25px 0;
                 h4 {
-                    margin-bottom: 10px;
+                    // margin-bottom: 10px;
                     text-align: center;
                     font-family: 'PlayfairDisplay';
                     font-weight: bolder;
                     font-size: 2rem;
                     color: #c8ad9b;
                 }
+                p {
+                    display: block;
+                    margin: 25px 0;
+                }
+                a {
+                    display: block;
+                    margin: 25px 0;
+                    padding: 0.8rem;
+                    border-radius: 5px;
+                    background-color: $forth-color;
+                    color: $third-color;
+                    text-decoration: none; // z-index: 1; // box-shadow: 1px 1px 1px #4d90c0;
+                    text-align: center;
+                    font-family: 'RobotoMono';
+                    font-weight: bold;
+                }
             }
         }
     }
     section.container-projects {
         padding: 0 17rem;
-        background-color: $third-color;
-        height: 500px;
+        background-color: $third-color; // display: block; // height: 500px;
+        // display: flex; // box-sizing: content-box; 
+        // flex-wrap: nowrap;
+        // align-content: flex-start;
         h2 {
             color: $forth-color;
         }
         div.projects-group {
+            // box-sizing: content-box; 
+            // flex-wrap: nowrap;
             h3 {
                 text-align: center;
                 font-family: 'PlayfairDisplay';
                 font-weight: bolder;
                 font-size: 2rem;
             }
-            div.project-leftside {
-                min-width: $left-column-size;
-                max-width: auto;
-                display: inline-block;
-                padding: 20px;
-                text-align: right;
-                font-family: 'PlayfairDisplay';
-                font-weight: bolder;
-                font-size: 1.2rem;
-                img {
-                    // width: auto;
-                    width: 140px;
-                }
-            }
-            div.project-rightside {
-                display: inline-block;
-                font-family: 'RobotoMono';
-            }
         }
+    }
+    section.container-contact {
+        background-color: $third-color;
     }
 }
 
@@ -311,8 +325,55 @@ ul.courses-list {
     li {
         padding: 7px 0;
     }
-    &:last-child {
-        // margin-right: 0px;
+}
+
+
+/* Main Projects Project-Group */
+
+div.project {
+    display: flex;
+    align-items: stretch;
+    div.project-leftside {
+        // flex: 0 0 $left-column-size;
+        min-width: $left-column-size;
+        max-width: auto;
+        display: inline-block;
+        padding: 20px;
+        text-align: right;
+        font-family: 'PlayfairDisplay';
+        font-weight: bolder;
+        font-size: 1.2rem;
+        img {
+            // width: auto;
+            width: 200px;
+        }
+    }
+    div.project-rightside {
+        display: inline-block;
+        padding: 20px;
+        font-family: 'RobotoMono';
+        font-weight: bold;
+        font-size: 1.2rem;
+        p {
+            display: block;
+            margin-bottom: 25px;
+        }
+        div.project-buttons {
+            a {
+                margin: 25px 0;
+                padding: 0.8rem;
+                border-radius: 5px;
+                background-color: $forth-color;
+                color: $third-color;
+                text-decoration: none; // z-index: 1; // box-shadow: 1px 1px 1px #4d90c0;
+                text-align: center;
+                font-family: 'RobotoMono';
+                font-weight: bold;
+            }
+            a.project-link-live {
+                background-color: $fifth-color;
+            }
+        }
     }
 }
 
