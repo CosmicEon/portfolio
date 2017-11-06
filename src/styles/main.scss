@@ -186,12 +186,17 @@ main#container-main {
             font-family: 'RobotoMono';
             font-weight: bold;
             font-size: 1.2rem;
-            h4 {
-                padding: 20px;
-                text-align: left;
-                font-family: 'PlayfairDisplay';
-                font-weight: bolder;
-                font-size: 2rem;
+            a {
+                display: block;
+                margin: 25px 0;
+                padding: 0.8rem;
+                border-radius: 5px;
+                background-color: $forth-color;
+                color: $third-color;
+                text-decoration: none;
+                text-align: center;
+                font-family: 'RobotoMono';
+                font-weight: bold;
             }
         }
     }
