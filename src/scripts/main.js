@@ -1,6 +1,6 @@
 /* globals $ */
 
-const $headerHeight = $('.container-header').height();
+const $headerHeight = $('#container-header').height();
 
 $(window).scroll(function () {
     const $windowScroll = $(this).scrollTop();
