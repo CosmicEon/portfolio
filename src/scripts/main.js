@@ -7,10 +7,11 @@ $(window).scroll(function () {
 
     // Navigation
     if ($windowScroll >= 100) {
-        $('.container-nav').addClass('nav-active');
-
+        $('#container-nav').addClass('nav-active');
+        $('.go-top').removeClass('hide-element');
     } else if ($windowScroll < 100) {
-        $('.container-nav').removeClass('nav-active');
+        $('#container-nav').removeClass('nav-active');
+        $('.go-top').addClass('hide-element');
     }
 
     // console.log($headerHeight);
@@ -31,3 +32,16 @@ $(window).scroll(function () {
         });
     }
 });
+
+$('.buttons-nav').click(function () {
+    // const $element = $(this).scrollTop();
+    const $element = $(this).hasClass();
+    console.log($element);
+    // $element.scrollTop(1000);
+    // console.log($element.scrollTop());
+    // $element.css({
+    //     'transform': 'translate(0px, -30px)',
+    // })
+    // $(window).scrollTop($element - 20).offset();
+});
+

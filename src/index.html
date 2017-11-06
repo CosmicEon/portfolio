@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="container-nav">
+    <nav id="container-nav">
         <div class="container-links">
             <a class="github" href="https://github.com/CosmicEon">
                 <i class="fa fa-github" aria-hidden="true"></i>
@@ -26,10 +26,17 @@
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
         </div>
-        <a class="button-contact" href="" role="button">Contact</a>
+        <div class="container-buttons-nav">
+            <a id="button-header" class="buttons-nav" href="#container-header" role="button">Home</a>
+            <a id="button-about" class="buttons-nav" href="#container-about" role="button">About</a>
+            <a id="button-skills" class="buttons-nav" href="#container-skills" role="button">Skills</a>
+            <a id="button-courses" class="buttons-nav" href="#container-courses" role="button">Courses</a>
+            <a id="button-projects" class="buttons-nav" href="#container-projects" role="button">Projects</a>
+            <a id="button-contact" class="buttons-nav" href="#container-contact" role="button">Contact</a>
+        </div>
     </nav>
 
-    <header class="container-header">
+    <header id="container-header">
         <div class="starfield-back"></div>
         <div class="planet-foreground"></div>
         <div class="container-title">
@@ -39,10 +46,10 @@
         </div>
     </header>
 
-    <main class="container-main">
+    <main id="container-main">
         <h2>Front-end Web Developer</h2>
         <!-- <hr> -->
-        <section class="container-about">
+        <section id="container-about">
             <div class="about-liftside">
                 <!-- <h4>About me</h4> -->
                 <img src="assets/images/profile_picture_bw_low.jpg" alt="portret of myself">
@@ -58,7 +65,7 @@
             </div>
         </section>
 
-        <section class="container-skills">
+        <section id="container-skills">
 
             <div class="skills-leftside">
                 <h3>Tech Skills</h3>
@@ -101,7 +108,7 @@
             </div>
         </section>
 
-        <section class="container-courses">
+        <section id="container-courses">
             <div class="courses-leftside">
                 <h3>Past courses</h3>
             </div>
@@ -109,7 +116,7 @@
                 <div class="courses-group">
                     <h4>Telerik Academy</h4>
                     <p>Software Academy Graduate - 2016-2017</p>
-                    <a target="_blank" href="https://my.telerikacademy.com/Certificates/Image/2353/ffae1027">Front-end Developer Certificate</a>
+                    <a href="https://my.telerikacademy.com/Certificates/Image/2353/ffae1027" target="_blank">Front-end Developer Certificate</a>
                 </div>
                 <div class="courses-group">
                     <h4>Free Code Camp</h4>
@@ -118,49 +125,55 @@
             </div>
         </section>
 
-        <section class="container-projects">
+        <section id="container-projects">
             <h2>Some work that I've done</h2>
+            <p>Here you can see the projects that I made. For some, I contributed to as a team work and for others I made by
+                my own.
+            </p>
             <div class="projects-group">
                 <h3>Goup Projects</h3>
                 <div class="project">
-                    <div class="project-leftside">
+                    <figure class="project-leftside">
                         <img src="assets/images/projects/project_1.png" alt="project 1">
-                    </div>
+                        <figcaption>Telerik Academy</figcaption>
+                    </figure>
                     <div class="project-rightside">
                         <p>
                             Minesweeper game - written in JavaScript, made as single-page application.
                         </p>
                         <div class="project-buttons">
-                            <a class="project-link-live" href="https://minesweeper-5fdfa.firebaseapp.com/">Live</a>
-                            <a class="project-link-code" href="https://github.com/krisi0505/Minesweeper">GitHub</a>
+                            <a class="project-link-live" href="https://minesweeper-5fdfa.firebaseapp.com/" target="_blank">Live</a>
+                            <a class="project-link-code" href="https://github.com/krisi0505/Minesweeper" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project-leftside">
+                    <figure class="project-leftside">
                         <img src="assets/images/projects/project_2.png" alt="project 2">
-                    </div>
+                        <figcaption>Telerik Academy</figcaption>
+                    </figure>
                     <div class="project-rightside">
                         <p>
                             Simple forum - written in JavaScript, made as standart web application with conection to Node.js RESTful API.
                         </p>
                         <div class="project-buttons">
-                            <a class="project-link-live" href="https://simple-forum-nodejs.herokuapp.com/">Live</a>
-                            <a class="project-link-code" href="https://github.com/CosmicEon/Team-Express-17-NodeJS">GitHub</a>
+                            <a class="project-link-live" href="https://simple-forum-nodejs.herokuapp.com/" target="_blank">Live</a>
+                            <a class="project-link-code" href="https://github.com/CosmicEon/Team-Express-17-NodeJS" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project-leftside">
+                    <figure class="project-leftside">
                         <img src="assets/images/projects/project_3.png" alt="project 3">
-                    </div>
+                        <figcaption>Telerik Academy</figcaption>
+                    </figure>
                     <div class="project-rightside">
                         <p>
                             Simple forum - written in TypeScript, made with Angular 4 as a MEAN Stack.
                         </p>
                         <div class="project-buttons">
                             <a class="project-link-live" href="">Live</a>
-                            <a class="project-link-code" href="https://github.com/Team-The-Heady-Squids/angular-course-project">GitHub</a>
+                            <a class="project-link-code" href="https://github.com/Team-The-Heady-Squids/angular-course-project" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -168,29 +181,53 @@
             <div class="projects-group">
                 <h3>Personal Projects</h3>
                 <div class="project">
-                    <div class="project-leftside">
+                    <figure class="project-leftside">
                         <img src="assets/images/projects/project_4.png" alt="project 4">
-                    </div>
+                        <figcaption>Telerik Academy</figcaption>
+                    </figure>
                     <div class="project-rightside">
                         <p>Single-page application written in JavaScript. Sliced the given psd design and used it for application
                             Application conects to Node.js RESTful API</p>
                         <div class="project-buttons">
-                            <a class="project-link-live" href="https://movie-forum.herokuapp.com/#/home/1">Live</a>
-                            <a class="project-link-code" href="https://github.com/CosmicEon/web-front-end-course-project">GitHub</a>
+                            <a class="project-link-live" href="https://movie-forum.herokuapp.com/#/home/1" target="_blank">Live</a>
+                            <a class="project-link-code" href="https://github.com/CosmicEon/web-front-end-course-project" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container-contact">
-            <h2>Get in touch</h2>
 
+        <section id="container-contact">
+            <h2>Get in touch</h2>
+            <form action="" method="post">
+                <p>
+                    <label for="name">Name</label>
+                    <input id="name" placeholder ="*" type="text" required>
+                </p>
+                <p>
+                    <label for="mail">Email</label>
+                    <input id="mail" placeholder ="*" type="email" required>
+                </p>
+                <p>
+                    <label for="message">Message</label>
+                    <textarea id="message" cols="40" rows="5" placeholder ="..." required></textarea>
+                </p>
+                <p>
+                    <button type="submit" required>Send</button>
+                </p>
+            </form>
         </section>
     </main>
 
-    <footer class="container-footer">
+    <footer id="container-footer">
         <h5>Krasen R. Ilkov © 2017. All Rights Reserved.</h5>
     </footer>
+
+    <div class="go-top">
+        <a href="#container-header">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        </a>
+    </div>
 
     <script src="assets/lib/jquery-3.2.1.min.js"></script>
     <script src="dist/js/scripts.js"></script>
