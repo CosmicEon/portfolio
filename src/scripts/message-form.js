@@ -10,11 +10,26 @@ $messageForm.on('submit', (event) => {
         method: 'POST',
         data: $messageForm.serialize(),
         dataType: 'json',
-        // success: (response) => {
-        //     console.log(response);
-        // },
         error: (thrownError) => {
             console.log(thrownError);
         },
     });
+
+    const $documentFragment = $(document.createDocumentFragment());
+
+    const $divElement = $('<div />', {
+        'class': 'message-success',
+    });
+    const $pElement = $('<h3 />', {
+        text: 'Message Send',
+    });
+
+    $divElement.append($pElement);
+    $documentFragment.append($divElement);
+
+    $messageForm.html($documentFragment);
+
+    setTimeout(function () {
+        location.reload(true);
+    }, 5000);
 });
