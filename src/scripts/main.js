@@ -14,9 +14,6 @@ $(window).scroll(function () {
         $('.go-top').addClass('hide-element');
     }
 
-    // console.log($headerHeight);
-    // console.log($windowScroll);
-
     // Header
     if ($windowScroll <= $headerHeight) {
         $('.starfield-back').css({
@@ -32,16 +29,3 @@ $(window).scroll(function () {
         });
     }
 });
-
-$('.buttons-nav').click(function () {
-    // const $element = $(this).scrollTop();
-    const $element = $(this).hasClass();
-    console.log($element);
-    // $element.scrollTop(1000);
-    // console.log($element.scrollTop());
-    // $element.css({
-    //     'transform': 'translate(0px, -30px)',
-    // })
-    // $(window).scrollTop($element - 20).offset();
-});
-

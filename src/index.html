@@ -42,12 +42,12 @@
         <div class="container-title">
             <p>The portfolio of</p>
             <h1>Krasen R. Ilkov</h1>
-            <p>A Web Developer</p>
+            <p>A Front-end Web Developer</p>
         </div>
     </header>
 
     <main id="container-main">
-        <h2>Front-end Web Developer</h2>
+        <h2>About me</h2>
         <!-- <hr> -->
         <section id="container-about">
             <div class="about-liftside">
@@ -58,9 +58,9 @@
                 <!-- <h4>About me</h4> -->
                 <p>
                     Hello, my name is Krasen Ilkov and I'm Web Developer. I love computer technologies and everything that brings with them.
-                    I work with JavaScript both in front-end with libraries and frameworks like Angular, and I work on back-end
-                    with Express framework. I like to stay up-to-date with the new technology and to experiment with them
-                    to uderstarnd how they work and how can improve my workflow.
+                    I work with JavaScript both in front-end with libraries and frameworks like Angular 2, and I work on
+                    back-end with Express framework. I like to stay up-to-date with the new technology and to experiment
+                    with them to uderstarnd how they work and how can improve my workflow.
                 </p>
                 <a href="assets/CV_Krasen_Ilkov.pdf" target="_blank">CV</a>
             </div>
@@ -200,18 +200,18 @@
 
         <section id="container-contact">
             <h2>Get in touch</h2>
-            <form action="" method="post">
+            <form id="message-form">
                 <p>
                     <label for="name">Name</label>
-                    <input id="name" placeholder="*" type="text" required>
+                    <input id="name" type="text" name="name" placeholder="*" required>
                 </p>
                 <p>
                     <label for="mail">Email</label>
-                    <input id="mail" placeholder="*" type="email" required>
+                    <input id="mail" type="email" name="email" placeholder="*" required>
                 </p>
                 <p>
                     <label for="message">Message</label>
-                    <textarea id="message" cols="40" rows="5" placeholder="..." required></textarea>
+                    <textarea id="message" name="message" cols="40" rows="5" placeholder="..." required></textarea>
                 </p>
                 <p>
                     <button type="submit" required>Send</button>

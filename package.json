@@ -4,6 +4,7 @@
   "description": "Here is my portfolio site's code.",
   "main": "index.js",
   "scripts": {
+    "serve": "live-server .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +19,10 @@
   },
   "homepage": "https://github.com/CosmicEon/portfolio#readme",
   "dependencies": {
+    "live-server": "^1.2.0",
     "pug": "^2.0.0-rc.4",
-    "systemjs": "^0.20.19"
+    "systemjs": "^0.20.19",
+    "v8flags": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.4",
