@@ -2,7 +2,7 @@
 
 const $messageForm = $('#message-form');
 
-$messageForm.on('submit', () => {
+$messageForm.on('submit', (event) => {
     event.preventDefault();
 
     $.ajax({
