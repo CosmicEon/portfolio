@@ -10,9 +10,9 @@ $messageForm.on('submit', (event) => {
         method: 'POST',
         data: $messageForm.serialize(),
         dataType: 'json',
-        success: (response) => {
-            console.log(response);
-        },
+        // success: (response) => {
+        //     console.log(response);
+        // },
         error: (thrownError) => {
             console.log(thrownError);
         },
