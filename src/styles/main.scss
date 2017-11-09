@@ -32,21 +32,25 @@ nav#container-nav {
     box-sizing: border-box;
     z-index: 3;
     .container-links {
-        margin-top: 5px;
         display: inline-block;
         a {
-            margin-right: 30px;
+            margin-right: 15px;
             i {
+                padding: 10px;
                 font-size: 30px;
                 color: $second-color;
+                border-radius: 7px;
                 &.fa-github:hover {
                     color: black;
+                    background-color: $third-color;
                 }
                 &.fa-stack-overflow:hover {
                     color: #F48024;
+                    background-color: $third-color;
                 }
                 &.fa-linkedin:hover {
                     color: #0073B0;
+                    background-color: $third-color;
                 }
             }
         }
@@ -55,6 +59,8 @@ nav#container-nav {
         border-radius: 5px;
         background-color: $forth-color;
         padding: 0 0.8rem;
+        display: flex;
+        align-items: center;
         a.buttons-nav {
             display: inline-block;
             color: $third-color;

@@ -29,3 +29,19 @@ $(window).scroll(function () {
         });
     }
 });
+
+$('.container-buttons-nav a').click(function (event) {
+    const $this = event.target;
+    const scrollTop = window.pageYOffset;
+
+    window.scrollBy(70, -73);
+    $this.style.top = scrollTop * 0.2 + 'px';
+    console.log($this);
+    console.log(scrollTop);
+});
+
+// function() {
+//     $('html, body').animate({
+//         scrollTop: $(this).offset().top + 'px'
+//     }, 'fast');
+// }

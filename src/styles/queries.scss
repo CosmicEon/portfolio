@@ -1,8 +1,9 @@
+// sass-lint:disable indentation
+
 /* width: 1600, 1200, 670, 360 */
 
 $medium: 7rem;
 $small: 0;
-$xSmall: 0;
 @media screen and (max-width: 1600px) {}
 
 @media screen and (max-width: 1200px) {
@@ -41,8 +42,6 @@ $xSmall: 0;
             margin-bottom: 20px;
         }
         div.container-buttons-nav {
-            display: flex;
-            align-items: center;
             flex-wrap: wrap;
             justify-content: center;
         }
