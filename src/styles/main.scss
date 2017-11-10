@@ -295,6 +295,16 @@ main#container-main {
             font-weight: bold;
             font-size: 1.2rem;
         }
+        div#preview-img {
+            position: fixed;
+            top: 20%;
+            left: 20%;
+            width: 100%;
+            img.enlarged-img {
+                position: absolute;
+                z-index: 100;
+            }
+        }
         div.projects-group {
             margin-top: 25px;
             h3 {
