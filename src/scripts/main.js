@@ -36,22 +36,22 @@ $(window).scroll(function () {
 $('.container-buttons-nav a').on('click', function (event) {
     const $this = event.target;
     const $targetSelector = $.attr($this, 'href').substr(1);
-    const $targetElement = $(`#${$targetSelector}`).offset().top;
+    const $targetElementOffsetTop = $(`#${$targetSelector}`).offset().top;
 
     const $navigationHeight = $('#container-nav').outerHeight();
     // const navigationHeight = document.getElementById('container-nav').clientHeight;
 
     $('html, body').animate({
-        scrollTop: $targetElement - $navigationHeight,
+        scrollTop: $targetElementOffsetTop - $navigationHeight,
     }, 800);
 });
 
 // Image preview
 // toggle it
-$('img.project-img, img.enlarged-img').on('click', function (event) {
+$('img.project-img').on('click', function (event) {
     const $windowWidth = $(document).width();
 
-    if ($windowWidth > 800) {
+    if ($windowWidth > 920) {
         const $this = event.target;
 
         const $sourceImg = $($this).attr('src');
@@ -60,23 +60,36 @@ $('img.project-img, img.enlarged-img').on('click', function (event) {
         const $previewImg = $('#preview-img');
         const $isHidden = $previewImg.hasClass('hide-element');
 
+        $('.project-leftside img').css({
+            'display': 'none',
+        });
+        $('.project-leftside figcaption').css({
+            'display': 'none',
+        });
+
         if ($isHidden) {
-            $('.enlarged-img').fadeIn(500);
+            // $('.enlarged-img').fadeIn(500);
             // console.log($item);
             $previewImg.removeClass('hide-element');
         }
     }
 });
 
+// Image preview
 // close it
 $('img.enlarged-img').on('click', function (event) {
-    const $this = event.target;
-
     const $previewImg = $('#preview-img');
     const $isHidden = $previewImg.hasClass('hide-element');
 
+    $('.project-leftside img').css({
+        'display': 'block',
+    });
+    $('.project-leftside figcaption').css({
+        'display': 'block',
+    });
+
     if (!$isHidden) {
-        $('.enlarged-img').fadeOut(500);
-        // $previewImg.addClass('hide-element');
+        // $('.enlarged-img').fadeOut(500);
+        $previewImg.addClass('hide-element');
     }
 });

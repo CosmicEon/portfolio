@@ -15,18 +15,16 @@ $messageForm.on('submit', (event) => {
         },
     });
 
-    const $documentFragment = $(document.createDocumentFragment());
-
     const $divElement = $('<div />', {
         'class': 'message-success',
     });
     const $pElement = $('<h3 />', {
         text: 'Message Send',
     });
+    const $documentFragment = $(document.createDocumentFragment());
 
     $divElement.append($pElement);
     $documentFragment.append($divElement);
-
     $messageForm.html($documentFragment);
 
     setTimeout(function () {

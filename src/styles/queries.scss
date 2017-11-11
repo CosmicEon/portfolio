@@ -41,9 +41,13 @@ $small: 0;
         .container-links {
             margin-bottom: 20px;
         }
+        // div#mobile-menu {
+        //     display: block;
+        // }
         div.container-buttons-nav {
             flex-wrap: wrap;
             justify-content: center;
+            // display: none;
         }
     }
 }
@@ -54,11 +58,14 @@ $small: 0;
             left: 0%;
         }
         div.container-title {
-            left: calc(50% - 140px);
+            left: calc(50% - 202px);
         }
     }
     main#container-main {
         section#container-about {
+             div.about-liftside img {
+                 text-align: center;
+             }
             flex-flow: row wrap;
             justify-content: center;
             padding: 0 $small;

@@ -1,11 +1,14 @@
 # My Portfolio
 
-Here is my portfolio site's code. I've build this site with the intent to showcase my works, for anyone interested in my skill set.
+Here is my portfolio site's code. I've build this site with the intent to showcase my works and skill set, for anyone interested in.
 
 ## 1.Technologies Used
 - HTML5
-- CSS3
+- CSS3, Sass
 - JavaScript (ES6)
+    - jQuery
+- Font-Awesome
+    - Font-mfizz
 
 ## 2.Getting started
 Clone the repository and then run:
