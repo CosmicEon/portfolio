@@ -15,7 +15,6 @@ $left-column-size: 200px;
 //     font-family: 'PlayfairDisplay';
 //     src: url('../../assets/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
 // }
-
 body {
     width: 100%;
     color: $second-color;
@@ -385,12 +384,22 @@ main#container-main {
                     font-weight: bold;
                     font-size: 1.2rem;
                     color: $first-color;
+                    &.submit {
+                        background-color: #D9FFE8;
+                        &:active {
+                            background-color: #75FFAC;
+                            color: #00DB58;
+                        }
+                    }
+                    &.reset {
+                        background-color: #FFE1E8;
+                        &:active {
+                            background-color: #FF7A99;
+                            color: #E00034;
+                        }
+                    }
                     &:hover {
                         cursor: pointer;
-                        color: #103b5b;
-                    }
-                    &:active {
-                        background-color: #6cb2e5;
                         color: #103b5b;
                     }
                 }
@@ -498,6 +507,10 @@ div.project {
         p {
             display: block;
             margin-bottom: 25px;
+            em {
+                font-size: 1.1rem;
+                font-style: italic;
+            }
         }
         div.project-buttons {
             font-size: 1rem;

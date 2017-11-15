@@ -68,8 +68,6 @@ $('img.project-img').on('click', function (event) {
         });
 
         if ($isHidden) {
-            // $('.enlarged-img').fadeIn(500);
-            // console.log($item);
             $previewImg.removeClass('hide-element');
         }
     }
@@ -89,7 +87,6 @@ $('img.enlarged-img').on('click', function (event) {
     });
 
     if (!$isHidden) {
-        // $('.enlarged-img').fadeOut(500);
         $previewImg.addClass('hide-element');
     }
 });
