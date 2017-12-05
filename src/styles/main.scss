@@ -190,6 +190,11 @@ main#container-main {
             font-family: 'RobotoMono';
             font-weight: bold;
             font-size: 1.2rem;
+            blockquote {
+                margin-bottom: 20px;
+                margin-left: 20px;
+                font-style: italic;
+            }
             a {
                 display: block;
                 width: 100px;
