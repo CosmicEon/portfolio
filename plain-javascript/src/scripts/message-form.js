@@ -21,6 +21,7 @@ $messageForm.on('submit', (event) => {
     const $pElement = $('<h3 />', {
         text: 'Message Send',
     });
+
     const $documentFragment = $(document.createDocumentFragment());
 
     $divElement.append($pElement);

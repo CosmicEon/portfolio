@@ -1,31 +1,11 @@
 # My Portfolio
+Here is my portfolio site's code. I've build this site with the intent to showcase my works and skill set, for anyone interested in. Originally was created with plain JavaScript, but  I remake it with Angular 2/4. *(in future with React and/or Vue).*
 
-Here is my portfolio site's code. I've build this site with the intent to showcase my works and skill set, for anyone interested in.
+## Plain JavaScript
+My initial intent was to make a site that was created by the basic building blocks. Single page application with scrolling effect, for looking the content.
 
-## 1.Technologies Used
-- HTML5
-- CSS3, Sass
-- JavaScript (ES6)
-    - jQuery
-- Font-Awesome
-    - Font-mfizz
+## Angular 2/4
+Recreated the initial application with Angular 2/4. *(Work in progress...)*
 
-## 2.Getting started
-Clone the repository and then run:
-```
-npm install
-```
-
-
-## 3.Commands to use
-- Run application on live server, used in combination with `gulp dev` command:
-    ```
-    npm run serve
-    ```
-- Build application for development:
-    ```
-    gulp dev
-    ```
-
-## 4.Author
+## Author
  Krasen Ilkov - [Telerik Academy Profile](http://telerikacademy.com/Users/KraitynDeWas)

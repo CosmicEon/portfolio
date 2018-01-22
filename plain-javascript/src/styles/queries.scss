@@ -1,6 +1,6 @@
 // sass-lint:disable indentation
 
-/* width: 1600, 1200, 670, 360 */
+/* width: 1600*, 1200, 920, 670, 360* */
 
 $medium: 7rem;
 $small: 0;
@@ -40,14 +40,10 @@ $small: 0;
         padding: 1rem 0;
         .container-links {
             margin-bottom: 20px;
-        }
-        // div#mobile-menu {
-        //     display: block;
-        // }
+        } 
         div.container-buttons-nav {
             flex-wrap: wrap;
             justify-content: center;
-            // display: none;
         }
     }
 }
@@ -63,9 +59,9 @@ $small: 0;
     }
     main#container-main {
         section#container-about {
-             div.about-liftside img {
-                 text-align: center;
-             }
+            div.about-liftside img {
+                text-align: center;
+            }
             flex-flow: row wrap;
             justify-content: center;
             padding: 0 $small;

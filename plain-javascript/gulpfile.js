@@ -9,15 +9,15 @@ const uglify = require('gulp-uglify');
 
 const dir = {
     src: './src/',
-    dest: './dist/',
+    dest: '../dist/',
 };
 
 /* html */
 gulp.task('html:main', () => {
     return gulp.src(dir.src + '/*.html')
-        .pipe(changed('./'))
+        .pipe(changed('../'))
         .pipe(htmlclean())
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('../'));
 });
 
 gulp.task('html:views', () => {
@@ -71,5 +71,5 @@ gulp.task('dev:watch', () => {
 });
 
 /* Dev mode */
-// assets is not used after rearrange
+// assets task is not used after rearrange
 gulp.task('dev', ['dev:watch']);
