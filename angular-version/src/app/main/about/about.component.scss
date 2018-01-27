@@ -1,0 +1,68 @@
+$first-color: #282c37;
+$second-color: #9baec8;
+$third-color: #d9e1e8;
+$forth-color: #2b90d9;
+$fifth-color: #F57F17;
+$left-column-size: 200px;
+h2 {
+  margin-bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI';
+  font-weight: bolder;
+  font-size: 3.2rem;
+  color: $forth-color;
+}
+
+section#container-about {
+  margin: 20px 0;
+  padding: 0 17rem;
+  display: flex;
+  align-content: flex-start;
+  div.about-liftside {
+    min-width: 200px;
+    display: inline-block;
+    padding: 20px;
+    text-align: right;
+    font-family: 'Segoe UI';
+    font-weight: bolder;
+    font-size: 2rem;
+    img {
+      width: 140px;
+      border: 3px solid $third-color;
+      border-radius: 7px;
+    }
+  }
+  div.about-rightside {
+    display: inline-block;
+    padding: 20px;
+    font-family: 'RobotoMono';
+    font-weight: bold;
+    font-size: 1.2rem;
+    blockquote {
+      margin-bottom: 20px;
+      margin-left: 20px;
+      font-style: italic;
+    }
+    a {
+      display: block;
+      width: 100px;
+      margin: 25px 0;
+      padding: 0.8rem;
+      border-radius: 5px;
+      background-color: $forth-color;
+      color: $third-color;
+      text-decoration: none;
+      text-align: center;
+      font-family: 'RobotoMono';
+      font-weight: bold;
+      &:hover {
+        color: #103b5b;
+      }
+      &:active {
+        background-color: #6cb2e5;
+        color: #103b5b;
+      }
+    }
+  }
+}

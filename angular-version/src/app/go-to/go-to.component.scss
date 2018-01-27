@@ -1,0 +1,22 @@
+$first-color: #282c37;
+$second-color: #9baec8;
+$third-color: #d9e1e8;
+$forth-color: #2b90d9;
+$fifth-color: #F57F17;
+$left-column-size: 200px;
+div.go-top {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 40px;
+  right: 30px;
+  border-radius: 7px;
+  line-height: 50px;
+  text-align: center;
+  background-color: $fifth-color;
+  z-index: 1;
+  a {
+    display: block;
+    color: $third-color;
+  }
+}

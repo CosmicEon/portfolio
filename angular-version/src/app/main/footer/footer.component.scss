@@ -1,0 +1,12 @@
+$first-color: #282c37;
+footer#container-footer {
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: $first-color;
+  font-family: 'RobotoMono';
+  h5 {
+    margin-bottom: 5px; // display: block;
+    // height: 100%;
+  }
+}

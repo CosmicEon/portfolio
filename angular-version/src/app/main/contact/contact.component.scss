@@ -1,0 +1,78 @@
+$first-color: #282c37;
+$second-color: #9baec8;
+$third-color: #d9e1e8;
+$forth-color: #2b90d9;
+$fifth-color: #F57F17;
+$left-column-size: 200px;
+section#container-contact {
+  background-color: $third-color;
+  text-align: center;
+  form {
+    display: block;
+    width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 14px 14px 0 0;
+    background-color: white;
+    box-shadow: 0px 1px 21px 4px $second-color;
+    p {
+      margin: 10px;
+      border: 0;
+      display: flex;
+      justify-content: center;
+      font-family: 'RobotoMono';
+      font-weight: bold;
+      font-size: 1rem;
+      label {
+        flex: 0 0 80px;
+        padding: 0 10px;
+        font-size: 1.2rem;
+        text-align: right;
+        color: $first-color;
+      }
+      input {
+        width: 300px;
+        padding: 5px 10px;
+        outline: none;
+        border: none;
+        border-bottom: 3px solid $second-color;
+      }
+      textarea {
+        width: 300px;
+        padding: 5px 10px;
+        outline: none;
+        border: none;
+        resize: none;
+        border-bottom: 3px solid $second-color;
+      }
+      button {
+        border: 3px solid $second-color;
+        border-radius: 3px;
+        margin: 20px 10px;
+        padding: 10px 20px;
+        font-family: 'RobotoMono';
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: $first-color;
+        &.submit {
+          background-color: #D9FFE8;
+          &:active {
+            background-color: #75FFAC;
+            color: #00DB58;
+          }
+        }
+        &.reset {
+          background-color: #FFE1E8;
+          &:active {
+            background-color: #FF7A99;
+            color: #E00034;
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          color: #103b5b;
+        }
+      }
+    }
+  }
+}

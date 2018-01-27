@@ -1,0 +1,65 @@
+$first-color: #282c37;
+$second-color: #9baec8;
+$third-color: #d9e1e8;
+$forth-color: #2b90d9;
+$fifth-color: #F57F17;
+$left-column-size: 200px;
+section#container-courses {
+  margin-top: 20px;
+  padding: 0 17rem;
+  display: flex;
+  align-content: flex-start;
+  background: url('../../../assets/images/backgrounds/sunset_over_earth.jpg') bottom center / 100% 900px no-repeat fixed;
+  /* background: image, position / size, repeat, attachment */
+  div.courses-leftside {
+    flex: 0 0 $left-column-size;
+    padding: 20px;
+    text-align: right;
+    font-family: 'Segoe UI';
+    font-weight: bolder;
+    font-size: 2rem;
+    color: $forth-color;
+  }
+  div.courses-rightside {
+    padding: 20px;
+    font-family: 'RobotoMono';
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    div.courses-group {
+      margin: 25px;
+      h4 {
+        text-align: center;
+        font-family: 'Segoe UI';
+        font-weight: bolder;
+        font-size: 2rem;
+        color: #c8ad9b;
+      }
+      p {
+        display: block;
+        margin: 25px 0;
+      }
+      a {
+        display: block;
+        margin: 25px 0;
+        padding: 0.8rem;
+        border-radius: 5px;
+        background-color: $forth-color;
+        color: $third-color;
+        text-decoration: none;
+        text-align: center;
+        font-family: 'RobotoMono';
+        font-weight: bold;
+        &:hover {
+          color: #103b5b;
+        }
+        &:active {
+          background-color: #6cb2e5;
+          color: #103b5b;
+        }
+      }
+    }
+  }
+}
