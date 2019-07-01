@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/CosmicEon/portfolio/static/css/main.19393e92.chunk.css",
+    "main.js": "/CosmicEon/portfolio/static/js/main.1d87019e.chunk.js",
+    "main.js.map": "/CosmicEon/portfolio/static/js/main.1d87019e.chunk.js.map",
+    "runtime~main.js": "/CosmicEon/portfolio/static/js/runtime~main.26a271b6.js",
+    "runtime~main.js.map": "/CosmicEon/portfolio/static/js/runtime~main.26a271b6.js.map",
+    "static/js/2.b41502e9.chunk.js": "/CosmicEon/portfolio/static/js/2.b41502e9.chunk.js",
+    "static/js/2.b41502e9.chunk.js.map": "/CosmicEon/portfolio/static/js/2.b41502e9.chunk.js.map",
+    "index.html": "/CosmicEon/portfolio/index.html",
+    "precache-manifest.45f91b33af6813906cdbc3412b2718ff.js": "/CosmicEon/portfolio/precache-manifest.45f91b33af6813906cdbc3412b2718ff.js",
+    "service-worker.js": "/CosmicEon/portfolio/service-worker.js",
+    "static/css/main.19393e92.chunk.css.map": "/CosmicEon/portfolio/static/css/main.19393e92.chunk.css.map",
+    "static/media/logo.svg": "/CosmicEon/portfolio/static/media/logo.5d5d9eef.svg"
+  }
+}
