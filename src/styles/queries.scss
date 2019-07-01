@@ -1,0 +1,109 @@
+// sass-lint:disable indentation
+
+/* width: 1600*, 1200, 920, 670, 360* */
+
+$medium: 7rem;
+$small: 0;
+@media screen and (max-width: 1600px) {
+}
+
+@media screen and (max-width: 1200px) {
+  header#container-header div.planet-foreground {
+    left: 36%;
+  }
+  main#container-main {
+    section#container-about {
+      padding: 0 $medium;
+    }
+    section#container-skills {
+      padding: 0 $medium;
+    }
+    section#container-courses {
+      padding: 0 $medium;
+    }
+    section#container-projects {
+      padding: 0 $medium;
+    }
+    section#container-contact {
+      padding: 0 $medium;
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  header#container-header div.planet-foreground {
+    left: 26%;
+  }
+  nav#container-nav {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    .container-links {
+      margin-bottom: 20px;
+    }
+    div.container-buttons-nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  header#container-header {
+    div.planet-foreground {
+      left: 0%;
+    }
+    div.container-title {
+      left: calc(50% - 202px);
+    }
+  }
+  main#container-main {
+    section#container-about {
+      div.about-liftside img {
+        text-align: center;
+      }
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: 0 $small;
+      div.about-rightside a {
+        margin: 20px auto;
+      }
+    }
+    section#container-skills {
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: 0 $small;
+    }
+    section#container-courses {
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: 0 $small;
+    }
+    section#container-projects {
+      padding: 0 $small;
+      div.projects-group {
+        div.project {
+          flex-flow: row wrap;
+          justify-content: center;
+          div.project-rightside div.project-buttons {
+            display: flex;
+            justify-content: center;
+            a {
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+    }
+    section#container-contact {
+      padding: 0 $small;
+      form {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+}
