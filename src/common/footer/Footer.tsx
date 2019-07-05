@@ -1,7 +1,16 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer: React.FC = () => {
-  return <div>Footer</div>;
-}
+  return (
+    <footer className="section last-section">
+      <div className="container">
+        <div className="copyright-text">
+          <p>Copyright &copy;{new Date().getFullYear()} Krasen Ilkov</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

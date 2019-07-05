@@ -1,32 +1,20 @@
 import React from "react";
 
-interface Props {}
-interface LinkProps {
-  className?: string;
-  children: any;
-}
+import Header from "../../common/header/Header";
+import Footer from "../../common/footer/Footer";
+import About from "./elements/About";
+import Skills from "./elements/Skills";
 
-const Link = ({ className, children }: LinkProps) => (
-  <a href="/test" className={className}>
-    {children}
-  </a>
-);
+interface Props {}
 
 const Home: React.FC<Props> = ({ ...props }: Props) => {
-  // const Home: React.FC = () => {
   return (
-    <div className="Home">
-      {/* <Counter /> */}
-      {/* <Dialog /> */}
-
-      <br />
-      <Link>Unstyled, boring Link</Link>
-      {/* <br />
-        <StyledLink>Styled, exciting Link</StyledLink> */}
-      <br />
-      <button>Hello World</button>
-      <div>test</div>
-    </div>
+    <>
+      <Header />
+      <About />
+      <Skills />
+      <Footer />
+    </>
   );
 };
 
