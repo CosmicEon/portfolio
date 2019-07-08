@@ -31,7 +31,7 @@ const Sidebar: React.FC = () => {
             <nav className="main-nav">
               <ul>
                 <li>
-                  <a href="/">About Me</a>
+                  <a href="/about">About Me</a>
                 </li>
 
                 <li>

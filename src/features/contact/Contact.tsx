@@ -8,7 +8,7 @@ interface Props {}
 const Contact: React.FC<Props> = ({ ...props }: Props) => {
   return (
     <>
-      <Header />
+      <Header title="Contact Me" />
       <section className="section">
         <div className="container">
           <div className="section-heading">

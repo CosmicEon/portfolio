@@ -22,8 +22,11 @@
   color: var(--default-primary-color);
   border-bottom: 2px solid var(--default-primary-color);
 }
-
-.portfolio-item {
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+.projects .portfolio-item {
   position: relative;
   width: 48%;
   margin: 1%;
@@ -32,7 +35,7 @@
   margin-bottom: 30px;
 }
 
-.portfolio-item img {
+.projects .portfolio-item img {
   top: 0;
   left: 0;
   width: 100%;
@@ -111,7 +114,7 @@ figure.item-wrapper:after {
   /* -webkit-transform: rotateX(-90deg); */
   transform: rotateX(-90deg);
   /* -webkit-transform-origin: 50% 50%; */
-  -ms-transform-origin: 50% 50%;
+  /* -ms-transform-origin: 50% 50%; */
   transform-origin: 50% 50%;
   opacity: 0;
 }

@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./Header.module.css";
 
-interface Props {}
+interface Props {
+  headerTitle?: string;
+  title: string;
+  subTitle?: string;
+}
 
 const Header: React.FC<Props> = ({ ...props }: Props) => {
   return (
@@ -10,9 +14,9 @@ const Header: React.FC<Props> = ({ ...props }: Props) => {
         <div>
           <div className={styles.blur} />
           <div className="section-heading">
-            <p>The portfolio of</p>
-            <h1 className={styles.header}>Krasen R. Ilkov</h1>
-            <p>A Full Stack Developer</p>
+            {props.headerTitle && <p>{props.headerTitle}</p>}
+            <h1 className={styles.header}>{props.title}</h1>
+            {props.subTitle && <p>{props.subTitle}</p>}
           </div>
         </div>
       </div>
