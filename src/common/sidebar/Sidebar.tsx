@@ -1,14 +1,30 @@
-import React from "react";
-import "./Sidebar.css";
+import React, { useState } from "react";
+import "./Sidebar.scss";
 import profile_picture from "../../assets/images/profile_picture.jpg";
 
 const Sidebar: React.FC = () => {
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const handleMobileMenu = () => {
+    setMobileMenu(!mobileMenu);
+  };
+
+  const mobileMenuClass = mobileMenu ? "open" : "";
+
   return (
     <section className="sidebar">
-      <i className="fa fa-bars" id="menu-toggle" />
+      <i
+        className="fa fa-bars"
+        id="menu-toggle"
+        onClick={() => handleMobileMenu()}
+      />
 
-      <div className="menu">
-        <i className="fa fa-times" id="menu-close" />
+      <div className={["menu", mobileMenuClass].join(" ")}>
+        <i
+          className="fa fa-times"
+          id="menu-close"
+          onClick={() => handleMobileMenu()}
+        />
 
         <div className="container">
           <div className="section-heading">

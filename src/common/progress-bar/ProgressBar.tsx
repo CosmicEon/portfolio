@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProgressBar.module.css";
+import "./ProgressBar.scss";
 
 interface Props {}
 interface State {}
@@ -31,8 +31,8 @@ class ProgressBar extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className={`s ${styles.progress_container}`}>
-        <div className={styles.progress_bar} style={this.state} />
+      <div className="progress-container">
+        <div className="progress-bar" style={this.state} />
       </div>
     );
   }

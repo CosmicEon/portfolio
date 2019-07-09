@@ -1,0 +1,16 @@
+footer.section.last-section {
+  border: none;
+  .copyright-text {
+    position: relative;
+    margin-top: 60px;
+    text-align: right;
+    p {
+      display: inline-block;
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 30px;
+      font-size: 13px;
+    }
+  }
+}

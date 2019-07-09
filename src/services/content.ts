@@ -7,6 +7,7 @@ import { ReactComponent as jquery } from "../assets/icons/jquery.svg";
 import { ReactComponent as typescript } from "../assets/icons/typescript.svg";
 
 import project_1 from "../assets/images/projects/project_1.jpg";
+import project_4 from "../assets/images/projects/project_4.jpg";
 
 export enum ProjectGroups {
   TelerikAcademy = "Telerik Academy",
@@ -59,7 +60,7 @@ const projects = [
   },
   {
     id: 2,
-    imgSrc: project_1,
+    imgSrc: project_4,
     group: ProjectGroups.TelerikAcademy,
     name: "Minesweeper game 2",
     technologies: ["HTML5", "CSS3", "JavaScript"],
@@ -70,7 +71,7 @@ const projects = [
   },
   {
     id: 3,
-    imgSrc: project_1,
+    imgSrc: project_4,
     group: ProjectGroups.MotionSoftware,
     name: "Minesweeper game 3",
     technologies: ["HTML5", "CSS3", "JavaScript"],
@@ -103,6 +104,24 @@ const projects = [
   }
 ];
 
-const content = { skills, projects };
+const blogPosts = [
+  {
+    id: 1,
+    title: "",
+    content: ""
+  },
+  {
+    id: 2,
+    title: "",
+    content: ""
+  },
+  {
+    id: 3,
+    title: "",
+    content: ""
+  }
+];
+
+const content = { skills, projects, blogPosts };
 
 export default content;

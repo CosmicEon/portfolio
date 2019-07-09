@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./Portfolio.css";
+import "./Portfolio.scss";
 import Header from "../../common/header/Header";
 import Footer from "../../common/footer/Footer";
 import content from "../../services/content";
