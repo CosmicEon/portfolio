@@ -6,7 +6,9 @@ const NotFound: React.FC = () => {
     <>
       <section className="section">
         <div className="container">
-          <div className="section-heading">Something went wrong</div>
+          <div className="section-heading">
+            <h2>Something went wrong</h2>
+          </div>
 
           <div className="section-body">
             <p>Animation here</p>

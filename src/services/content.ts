@@ -9,10 +9,36 @@ import { ReactComponent as typescript } from "../assets/icons/typescript.svg";
 import project_1 from "../assets/images/projects/project_1.jpg";
 import project_4 from "../assets/images/projects/project_4.jpg";
 
+import blog_1 from "../assets/images/blog/blog_1.jpg";
+
 export enum ProjectGroups {
   TelerikAcademy = "Telerik Academy",
   MotionSoftware = "Motion Software",
   ADSuisse = "ADSuisse"
+}
+
+export interface Replay {
+  user: string;
+  date: string;
+  message: string;
+}
+
+export interface Comment {
+  id: number;
+  user: string;
+  date: string;
+  message: string;
+  replayes: Replay[];
+}
+
+export interface BlogPost {
+  id: number;
+  date: string;
+  views: number;
+  title: string;
+  imgSrc: string;
+  content: string[];
+  comments: Comment[];
 }
 
 const skills = [
@@ -107,18 +133,120 @@ const projects = [
 const blogPosts = [
   {
     id: 1,
-    title: "",
-    content: ""
+    date: new Date().toDateString(),
+    views: 34,
+    title: "Astronomy Binoculars A Great Alternative",
+    imgSrc: blog_1,
+    content: [
+      "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed"
+    ],
+    comments: [
+      {
+        id: 1,
+        user: "Krasen Ilkov",
+        date: new Date().toDateString(),
+        message: "Never say goodbye till the end comes! 1",
+        replayes: [
+          {
+            user: "Krasen Ilkov",
+            date: new Date().toDateString(),
+            message: "Never say goodbye till the end comes! 1.1"
+          },
+          {
+            user: "Krasen Ilkov",
+            date: new Date().toDateString(),
+            message: "Never say goodbye till the end comes! 1.2"
+          }
+        ]
+      },
+      {
+        id: 2,
+        user: "Krasen Ilkov",
+        date: new Date().toDateString(),
+        message: "Never say goodbye till the end comes! 2",
+        replayes: []
+      },
+      {
+        id: 3,
+        user: "Krasen Ilkov",
+        date: new Date().toDateString(),
+        message: "Never say goodbye till the end comes! 3",
+        replayes: [
+          {
+            user: "Krasen Ilkov",
+            date: new Date().toDateString(),
+            message: "Never say goodbye till the end comes! 3.1"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 2,
-    title: "",
-    content: ""
+    date: new Date().toDateString(),
+    views: 45,
+    imgSrc: blog_1,
+    title: "2 Astronomy Binoculars A Great Alternative",
+    content: [
+      "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed"
+    ],
+    comments: []
   },
   {
     id: 3,
-    title: "",
-    content: ""
+    date: new Date().toDateString(),
+    views: 12,
+    imgSrc: blog_1,
+    title: "3 Astronomy Binoculars A Great Alternative",
+    content: [
+      "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed"
+    ],
+    comments: []
+  },
+  {
+    id: 4,
+    date: new Date().toDateString(),
+    views: 74,
+    imgSrc: blog_1,
+    title: "4 Astronomy Binoculars A Great Alternative",
+    content: [
+      "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed"
+    ],
+    comments: []
+  },
+  {
+    id: 5,
+    date: new Date().toDateString(),
+    views: 36,
+    imgSrc: blog_1,
+    title: "5 Astronomy Binoculars A Great Alternative",
+    content: [
+      "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed"
+    ],
+    comments: []
+  },
+  {
+    id: 6,
+    date: new Date().toDateString(),
+    views: 96,
+    imgSrc: blog_1,
+    title: "6 Astronomy Binoculars A Great Alternative",
+    content: [
+      "MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction.",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed",
+      "Boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training. who has the willpower to actually sit through a self-imposed"
+    ],
+    comments: []
   }
 ];
 
