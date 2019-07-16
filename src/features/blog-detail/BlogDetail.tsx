@@ -3,6 +3,7 @@ import { RouteComponentProps } from "react-router";
 
 import "./BlogDetail.scss";
 import Footer from "../../common/footer/Footer";
+import BlogNav from "./elements/BlogNav";
 import Comments from "./elements/Comments";
 import Replay from "./elements/Replay";
 import content from "../../services/content";
@@ -14,67 +15,117 @@ interface MatchParams {
 interface Props extends RouteComponentProps<MatchParams> {}
 
 const BlogDetail: React.FC<Props> = ({ ...props }: Props) => {
-  const [name, setName] = useState(""); // 1 comment as
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [selectedId, setSelectedId] = useState(0); // 1 comment as
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const blogPostId = Number(props.match.params.id);
   const selectedBlogPost = content.blogPosts.filter(
     bp => bp.id === blogPostId
   )[0];
-  const modalClasses = ["modal", isModalOpen ? "is-active" : null].join(" ");
 
-  const setInputValue = (type: string) => (e: any) => {
-    const value = e.target.value;
-    switch (type) {
-      case "name":
-        setName(value);
-        break;
-      case "email":
-        setEmail(value);
-        break;
-      case "message":
-        setMessage(value);
-        break;
-    }
-  };
+  const [blogPost, setBlogPost] = useState(selectedBlogPost);
+
+  const [selectedCommentId, setSelectedCommentId] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const modalClasses = ["modal", isModalOpen ? "is-active" : null].join(" ");
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  const createCommentModal = (id: number) => {
-    console.log("createCommentModal", id);
-    setSelectedId(id);
+  const toggleReplayModal = (id: number) => {
+    setSelectedCommentId(id);
     toggleModal();
   };
 
-  const createComment = (e: any) => {
+  const createComment = (e: any, formValues: any) => {
     e.preventDefault();
-    console.log("createComment", name, email, message);
-    setIsModalOpen(!isModalOpen);
+
+    const newComment = {
+      id: blogPost.comments.length + 1,
+      user: formValues.name,
+      email: formValues.email,
+      date: new Date().toDateString(),
+      message: formValues.message,
+      replayes: []
+    };
+    const updatedBlogPost = {
+      ...blogPost,
+      comments: [...blogPost.comments, newComment]
+    };
+
+    setBlogPost(updatedBlogPost);
+    setIsModalOpen(false);
   };
+
+  const createReplayComment = (e: any, formValues: any) => {
+    e.preventDefault();
+
+    const newReplay = {
+      user: formValues.name,
+      date: new Date().toDateString(),
+      message: formValues.message
+    };
+    const updatedComents = blogPost.comments.map(coment => {
+      if (coment.id === selectedCommentId) {
+        return { ...coment, replayes: [...coment.replayes, newReplay] };
+      }
+      return coment;
+    });
+
+    const updatedBlogPost = {
+      ...blogPost,
+      comments: [...updatedComents]
+    };
+
+    setBlogPost(updatedBlogPost);
+    toggleModal();
+  };
+
+  const navValues = () => {
+    const blogPostIndex = content.blogPosts.findIndex(b => b.id === blogPostId);
+    const formValues = {
+      previous: { index: 42, text: "" },
+      next: { index: 42, text: "" }
+    };
+
+    // previous
+    if (blogPostIndex === 0) {
+      formValues.previous.index = content.blogPosts[blogPostIndex].id;
+      formValues.previous.text = content.blogPosts[blogPostIndex].title;
+    } else {
+      formValues.previous.index = content.blogPosts[blogPostIndex - 1].id;
+      formValues.previous.text = content.blogPosts[blogPostIndex - 1].title;
+    }
+
+    // next
+    if (blogPostIndex === content.blogPosts.length) {
+      formValues.next.index = content.blogPosts[blogPostIndex].id;
+      formValues.next.text = content.blogPosts[blogPostIndex].title;
+    } else {
+      formValues.next.index = content.blogPosts[blogPostIndex + 1].id;
+      formValues.next.text = content.blogPosts[blogPostIndex + 1].title;
+    }
+
+    return formValues;
+  };
+
   return (
     <>
       <section className="section blog-detail">
         <div className="container">
           <div className="section-heading">
-            <h2 className="text-uppercase">{selectedBlogPost.title}</h2>
+            <h2 className="text-uppercase">{blogPost.title}</h2>
             <ul className="blog-info">
               <li>
                 <i className="far fa-calendar" />
-                <span>{selectedBlogPost.date}</span>
+                <span>{blogPost.date}</span>
               </li>
               <li>
                 <i className="far fa-eye" />
-                <span>{selectedBlogPost.views} Views</span>
+                <span>{blogPost.views} Views</span>
               </li>
               <li>
                 <i className="far fa-comment" />
-                <span>{selectedBlogPost.comments.length} Comments</span>
+                <span>{blogPost.comments.length} Comments</span>
               </li>
             </ul>
           </div>
@@ -84,72 +135,38 @@ const BlogDetail: React.FC<Props> = ({ ...props }: Props) => {
               <div
                 className="image"
                 style={{
-                  backgroundImage: `url(${selectedBlogPost.imgSrc})`
+                  backgroundImage: `url(${blogPost.imgSrc})`
                 }}
               />
             </div>
 
             <div className="blog-content">
-              {selectedBlogPost.content.map((text, i) => (
+              {blogPost.content.map((text, i) => (
                 <p key={i}>{text}</p>
               ))}
             </div>
 
-            <div className="navigation-area">
-              <div className="columns">
-                <a href="/" className="column is-6 left">
-                  <div className="thumb">
-                    <i className="fas fa-arrow-left" />
-                  </div>
-                  <div className="detials">
-                    <p>Prev Post</p>
-                    <h4>Space The Final Frontier</h4>
-                  </div>
-                </a>
-                <a href="/" className="column is-6 right">
-                  <div className="detials">
-                    <p>Next Post</p>
-                    <h4>Telescopes 101</h4>
-                  </div>
-                  <div className="thumb">
-                    <i className="fas fa-arrow-right" />
-                  </div>
-                </a>
-              </div>
-            </div>
+            <BlogNav arrowValues={navValues()} />
 
-            {selectedBlogPost.comments.length > 0 && (
+            {blogPost.comments.length > 0 && (
               <Comments
-                blogPost={selectedBlogPost}
-                handleToggleModal={toggleModal}
+                blogPost={blogPost}
+                handleToggleReplayModal={toggleReplayModal}
               />
             )}
 
-            {/* <div className={modalClasses}>
+            <div className={modalClasses}>
               <div className="modal-background" />
               <div className="modal-card">
                 <header className="modal-card-head">
-                  <p className="modal-card-title">Modal title</p>
+                  <p className="modal-card-title" />
                   <i className="fas fa-times" onClick={toggleModal} />
                 </header>
-                <section className="modal-card-body">
-                  <Replay handleToggleModal={toggleModal} />
-                </section>
-                <footer className="modal-card-foot">
-                  <button className="button is-success" onClick={toggleModal}>
-                    Save changes
-                  </button>
-                  <button className="button" onClick={toggleModal}>
-                    Cancel
-                  </button>
-                </footer>
+                <Replay handleCreateComment={createReplayComment} />
               </div>
-            </div> */}
+            </div>
 
-            <Replay
-              handleCreateComment={createComment}
-              handleInputValue={setInputValue}
-            />
+            <Replay handleCreateComment={createComment} />
           </div>
         </div>
       </section>

@@ -26,6 +26,7 @@ export interface Replay {
 export interface Comment {
   id: number;
   user: string;
+  email: string;
   date: string;
   message: string;
   replayes: Replay[];
@@ -146,6 +147,7 @@ const blogPosts = [
       {
         id: 1,
         user: "Krasen Ilkov",
+        email: "",
         date: new Date().toDateString(),
         message: "Never say goodbye till the end comes! 1",
         replayes: [
@@ -164,6 +166,7 @@ const blogPosts = [
       {
         id: 2,
         user: "Krasen Ilkov",
+        email: "",
         date: new Date().toDateString(),
         message: "Never say goodbye till the end comes! 2",
         replayes: []
@@ -171,6 +174,7 @@ const blogPosts = [
       {
         id: 3,
         user: "Krasen Ilkov",
+        email: "",
         date: new Date().toDateString(),
         message: "Never say goodbye till the end comes! 3",
         replayes: [
